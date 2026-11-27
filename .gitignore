@@ -7,7 +7,11 @@ next-env.d.ts
 .env*
 /evidence/
 /private-campaign/
-/public/campaign/
+/public/campaign/*
+!/public/campaign/focus-0.webp
+!/public/campaign/focus-1.webp
+!/public/campaign/focus-2.webp
+!/public/campaign/focus-3.webp
 /assets/masters/
 /RTW-*Pack*/
 /*.zip

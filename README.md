@@ -15,13 +15,13 @@ Open the local URL printed by Next.js. For a production build, run `npm.cmd run 
 
 ## Classroom campaign images
 
-The ten generated garment WebPs are included in `public/images`. The four personalized lookbook images are licensed for the local classroom demonstration only. On an authorized classroom machine, restore the existing `public/campaign/focus-0.webp` through `focus-3.webp` from the classroom copy. The homepage, lookbook, outfit thumbnails and account pages need those files for the complete visual experience. They are intentionally ignored by Git.
+The download includes all ten garment images in `public/images` and all four finished lookbook images in `public/campaign`. On the classroom PC, extract the ZIP, open the folder containing `package.json`, and follow the two commands above.
 
 Font and component notices are in `public/licenses`. Dependency versions are pinned in `package-lock.json`. All accounts and orders are simulated. Use fictional details.
 
 ## Verify
 
-Use `npm.cmd run lint` and `npm.cmd run typecheck`. For browser tests, install Google Chrome, restore the local classroom images, run `npm.cmd run build`, then `npm.cmd test`. The tests use port 3147 by default. Choose a free port using `RTW_TEST_PORT` if needed.
+Use `npm.cmd run lint` and `npm.cmd run typecheck`. For browser tests, install Google Chrome, run `npm.cmd run build`, then `npm.cmd test`. The tests use port 3147 by default. Choose a free port using `RTW_TEST_PORT` if needed.
 
 ## Phone development preview
 
