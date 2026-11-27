@@ -1,0 +1,638 @@
+/* A single stage keeps each photographed body continuous through the reveal. */
+.campaign {
+  margin: clamp(0.6rem, 2vw, 2rem) clamp(0.7rem, 3vw, 3.5rem) 0;
+  background: var(--forest);
+  color: var(--ivory);
+  overflow: hidden;
+}
+.campaign-top,
+.campaign-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px clamp(1rem, 3vw, 3.4rem);
+  position: relative;
+  z-index: 6;
+}
+.campaign-top {
+  font: 12px var(--mono);
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #e8e5dd55;
+}
+.campaign-stage {
+  position: relative;
+  isolation: isolate;
+  height: clamp(390px, 39vw, 650px);
+  overflow: hidden;
+  background: radial-gradient(
+    ellipse at 78% 20%,
+    #8e9077 0%,
+    #5a6350 28%,
+    var(--forest) 67%
+  );
+}
+.hero-title {
+  position: absolute;
+  left: 4%;
+  top: 23%;
+  z-index: 5;
+  pointer-events: none;
+  transition:
+    transform 0.7s,
+    opacity 0.4s;
+}
+.hero-title h1 {
+  font-size: clamp(72px, 9.7vw, 170px);
+  line-height: 0.78;
+  letter-spacing: -0.045em;
+}
+.hero-title em {
+  display: block;
+  color: var(--sand);
+  font-weight: 400;
+}
+.hero-title p {
+  margin-top: 1.65rem;
+}
+.campaign[data-expanded="true"] .hero-title {
+  transform: translateY(-45%);
+  opacity: 0;
+}
+.campaign-bar {
+  border-top: 1px solid #e8e5dd55;
+  gap: 1rem;
+}
+.reveal-control,
+.campaign-bar a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+}
+.reveal-control {
+  background: var(--sand);
+  color: var(--forest);
+}
+.campaign-bar a {
+  border: 1px solid var(--sage);
+}
+.ensemble-detail {
+  background: var(--ivory);
+  color: var(--forest);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 3%;
+}
+.ensemble-detail h2 {
+  font-size: 3rem;
+}
+.ensemble-items {
+  display: grid;
+  gap: 0.4rem;
+}
+.ensemble-items a {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  text-decoration: underline;
+}
+.reveal-control,
+.action,
+header a,
+.stage-controls button,
+.catalog-photo img {
+  transition:
+    transform 0.18s,
+    background-color 0.18s,
+    color 0.18s;
+}
+.reveal-control:hover {
+  background: var(--ivory);
+}
+.reveal-control:active,
+.action:active {
+  transform: translateY(2px);
+}
+.index-buttons button {
+  min-height: 44px;
+  min-width: 44px;
+}
+.grid a:hover .catalog-photo img {
+  transform: scale(1.035);
+}
+.catalog-photo {
+  overflow: hidden;
+}
+.contact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.contact img {
+  background: linear-gradient(120deg, #707963, var(--sage));
+  object-position: center top;
+}
+.section-title > a,
+.categories > a {
+  border: 1px solid;
+  padding: 0.65rem 1rem;
+  text-decoration: none;
+}
+.account-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 1fr);
+  margin: 2rem 5vw;
+  align-items: stretch;
+  border: 1px solid var(--line);
+}
+.account-shell .account {
+  width: 100%;
+  max-width: 540px;
+  min-height: 0;
+}
+.account-print {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--forest), #717963);
+  min-height: 460px;
+}
+.account-print img {
+  object-fit: contain;
+  object-position: 65% top;
+  transform: scale(1.55);
+  transform-origin: 50% 0;
+}
+.account-print span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--forest);
+  color: var(--ivory);
+  padding: 0.65rem 1rem;
+  font: 13px var(--mono);
+}
+.specimen {
+  transition:
+    transform 0.65s cubic-bezier(0.19, 0.85, 0.23, 1),
+    left 0.65s cubic-bezier(0.19, 0.85, 0.23, 1),
+    filter 0.45s;
+}
+.dossier .pieces a {
+  min-height: 44px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.buy label select {
+  border-color: var(--forest);
+}
+.bag-row button {
+  min-height: 44px;
+}
+.total {
+  border-block: 1px dashed var(--forest);
+}
+@media (max-width: 800px) {
+  .campaign-stage {
+    height: 440px;
+  }
+  .hero-title {
+    top: 11%;
+  }
+  .hero-title h1 {
+    font-size: 5.25rem;
+  }
+  .ensemble-detail {
+    flex-wrap: wrap;
+  }
+  .account-shell {
+    grid-template-columns: 1fr 1.1fr;
+  }
+}
+@media (max-width: 650px) {
+  .campaign {
+    margin: 0.6rem;
+  }
+  .campaign-top {
+    font-size: 10px;
+  }
+  .campaign-stage {
+    height: 430px;
+  }
+  .hero-title {
+    top: 1.1rem;
+    left: 5%;
+  }
+  .hero-title h1 {
+    font-size: clamp(3.8rem, 15vw, 6rem);
+  }
+  .hero-title em {
+    display: inline;
+  }
+  .hero-title p {
+    margin-top: 0.55rem;
+    font-size: 0.88rem;
+  }
+  .campaign-bar {
+    padding: 0.6rem;
+    gap: 0.4rem;
+  }
+  .campaign-bar a,
+  .reveal-control {
+    font-size: 0.875rem;
+    padding-inline: 0.65rem;
+  }
+  .ensemble-detail {
+    gap: 1rem;
+  }
+  .ensemble-items {
+    width: 100%;
+  }
+  .contact {
+    grid-template-columns: 1fr 1fr;
+  }
+  .account-shell {
+    display: block;
+    margin: 1rem;
+  }
+  .account-print {
+    min-height: 160px;
+  }
+  .account-print img {
+    object-position: center top;
+    transform: scale(3.8);
+  }
+  .feature .index-buttons {
+    gap: 0;
+  }
+  .stage-controls {
+    padding: 0 0.3rem;
+    gap: 0;
+  }
+  .account-shell .account {
+    padding: 1.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .campaign *,
+  .specimen {
+    transition-duration: 0s !important;
+    animation: none !important;
+  }
+}
+header [aria-current="page"] {
+  text-decoration: underline;
+  text-underline-offset: 0.45em;
+}
+.styled-link {
+  display: inline-block;
+  padding: 0.65rem 0;
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+.receipt {
+  font-variant-numeric: tabular-nums;
+}
+.receipt .bag-row {
+  border-top-style: dashed;
+}
+.receipt .total {
+  font-family: var(--mono);
+}
+.rack .selected img {
+  animation: hanger-settle 0.64s both;
+  transform-origin: 50% 2%;
+}
+@keyframes hanger-settle {
+  0% {
+    transform: rotate(-1.7deg);
+  }
+  60% {
+    transform: rotate(0.6deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.stage-heading {
+  font-size: clamp(3rem, 5.3vw, 6rem);
+}
+.campaign-bar a:hover {
+  background: var(--ivory);
+  color: var(--forest);
+}
+.campaign-stage:after {
+  content: "";
+  height: 2px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--sand) 0 2px,
+    transparent 2px 20px
+  );
+  z-index: 5;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rack .selected img {
+    animation: none;
+  }
+}
+/* One interpolated camera coordinate controls depth and lateral position together. */
+@property --cursor {
+  syntax: "<number>";
+  initial-value: 0;
+  inherits: true;
+}
+.campaign-stage {
+  touch-action: pan-y;
+  transition: --cursor 680ms cubic-bezier(0.22, 0.72, 0.22, 1),
+    --reveal 880ms cubic-bezier(0.42, 0, 0.2, 1);
+}
+/* A single progress value keeps scale, image alignment and position reversible. */
+@property --reveal {
+  syntax: "<number>";
+  inherits: true;
+  initial-value: 0;
+}
+.campaign[data-expanded="true"] .campaign-stage { --reveal: 1; }
+.figure {
+  --lineup-x: calc(82% - var(--i) * 13%);
+  --lineup-y: calc(5% + var(--i) * 6%);
+  --lineup-width: 43%;
+  --lineup-height: 206%;
+  --lineup-scale: calc(1 - var(--i) * .11);
+  --angle: calc((var(--i) - var(--cursor)) * 90deg);
+  --depth: calc((1 - cos(var(--angle))) / 2);
+  --rear: calc(var(--depth) * var(--depth) * var(--depth) * var(--depth));
+  --rear-offset: 18%;
+  --floor-rise: 18%;
+  --runway-x: calc(50% + 35% * sin(var(--angle)) - var(--rear-offset) * var(--rear));
+  --runway-width: 49%;
+  --runway-scale: calc(1 - .45 * var(--depth));
+  /* Keep soles on the perspective floor as the back row gets smaller. */
+  --runway-y: calc(95% - var(--floor-rise) * var(--depth) - 90% * var(--runway-scale));
+  --lineup: calc(1 - var(--reveal));
+  position: absolute;
+  left: calc(var(--lineup-x) * var(--lineup) + var(--runway-x) * var(--reveal));
+  top: calc(var(--lineup-y) * var(--lineup) + var(--runway-y) * var(--reveal));
+  width: calc(var(--lineup-width) * var(--lineup) + var(--runway-width) * var(--reveal));
+  height: calc(var(--lineup-height) * var(--lineup) + 90% * var(--reveal));
+  transform-origin: center top;
+  transform: translateX(-50%) scale(calc(var(--lineup-scale) * var(--lineup) + var(--runway-scale) * var(--reveal)));
+  filter: brightness(calc(1 - .30 * var(--depth) * var(--reveal)));
+  z-index: calc((4 - var(--i)) * var(--lineup) + (9 - 6 * var(--depth)) * var(--reveal));
+}
+.figure:disabled { opacity: 1; }
+.figure img {
+  object-fit: contain;
+  object-position: center calc(100% * var(--reveal));
+  pointer-events: none;
+}
+@media (max-width: 800px) {
+  .figure {
+    --lineup-x: calc(83% - var(--i) * 15%);
+    --lineup-y: calc(17% + var(--i) * 6%);
+    --lineup-width: 49%;
+    --lineup-height: 164%;
+    --runway-width: 56%;
+  }
+}
+@media (max-width: 650px) {
+  .figure {
+    --lineup-x: calc(87% - var(--i) * 24%);
+    --lineup-y: calc(28% + var(--i) * 5%);
+    --lineup-width: 66%;
+    --lineup-height: 140%;
+    --lineup-scale: calc(1 - var(--i) * .1);
+    --runway-width: 54%;
+    --floor-rise: 29%;
+    --rear-offset: 21%;
+  }
+}
+.campaign-stage:before {
+  content: "";
+  position: absolute;
+  inset: 66% -8% -20%;
+  background: linear-gradient(168deg, #c9c8ac55, #35442a44);
+  border-top: 1px solid #e8e5dd55;
+  transform: skewY(-4deg);
+  opacity: 0;
+  transition: opacity 0.65s;
+}
+.campaign[data-expanded="true"] .campaign-stage:before {
+  opacity: 1;
+}
+.stage-caption {
+  position: absolute;
+  left: 3%;
+  bottom: 4%;
+  z-index: 12;
+  pointer-events: none;
+  font: 12px var(--mono);
+  background: var(--forest);
+  color: var(--ivory);
+  padding: 0.5rem 0.9rem;
+  border-left: 3px solid var(--sand);
+  animation: ink-in 0.3s both;
+}
+.stage-caption b {
+  display: block;
+  font: 1.7rem var(--serif);
+}
+.run-controls {
+  display: flex;
+  align-items: center;
+}
+.run-controls button {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-content: center;
+  font: 14px var(--mono);
+}
+.run-controls [aria-pressed="true"] {
+  background: var(--ivory);
+  color: var(--forest);
+  box-shadow: inset 0 -3px var(--sand);
+}
+.campaign[data-expanded="false"] .reveal-control {
+  font-weight: 700;
+  box-shadow: 3px 3px 0 var(--sage);
+  padding-inline: 1.5rem;
+}
+.campaign-bar button:focus-visible {
+  outline: 3px solid var(--sand);
+  outline-offset: 3px;
+}
+.look-total {
+  font: 13px var(--mono);
+  border-left: 1px solid var(--line);
+  padding-left: 1.3rem;
+}
+.look-total strong {
+  display: block;
+  font: 2.35rem var(--serif);
+}
+.ensemble-detail,
+.buy [role="status"]:not(:empty),
+.receipt,
+.account [role="status"]:not(:empty) {
+  animation: ink-in 0.32s ease-out both;
+}
+@keyframes ink-in {
+  from {
+    opacity: 0.45;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.account-print {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  padding: 8px;
+  background: var(--forest);
+}
+.account-print figure {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  background: linear-gradient(135deg, #adb099, #747e68);
+}
+.account-print figure img {
+  height: 125% !important;
+  transform: none;
+  object-fit: contain;
+  object-position: center 0;
+}
+.account-print figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: var(--forest);
+  color: var(--ivory);
+  padding: 0.3rem 0.5rem;
+  font: 12px var(--mono);
+}
+@media (max-width: 800px) {
+  .campaign-bar {
+    flex-wrap: wrap;
+  }
+  .run-controls {
+    order: 3;
+    justify-content: center;
+    width: 100%;
+  }
+  .stage-caption b {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 650px) {
+  .stage-caption {
+    bottom: 1%;
+    left: 1%;
+    padding: 0.2rem 0.45rem;
+    font-size: 10px;
+  }
+  .stage-caption b {
+    font-size: 1rem;
+  }
+  .account-print {
+    grid-template-columns: repeat(4, 1fr);
+    min-height: 150px;
+  }
+  .account-print figure img {
+    height: 145% !important;
+  }
+  .account-print figcaption {
+    font-size: 10px;
+  }
+  .look-total {
+    padding-left: 0;
+    border: 0;
+  }
+  .campaign[data-expanded="false"] .reveal-control {
+    padding-inline: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .campaign-stage,
+  .campaign-stage:before,
+  .campaign .figure {
+    transition-duration: 0s !important;
+  }
+  .ensemble-detail,
+  .buy [role="status"],
+  .receipt,
+  .account [role="status"] {
+    animation: none !important;
+  }
+}
+.run-controls button:hover:not([aria-pressed="true"]) {
+  background: #e8e5dd22;
+}
+.run-controls button:active,
+.ensemble-items a:active {
+  transform: translateY(1px);
+}
+.ensemble-items a:hover {
+  background: color-mix(in srgb, var(--sand) 40%, transparent);
+}
+.ensemble-items a {
+  min-height: 44px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  text-decoration: none;
+}
+.campaign-bar .reveal-control:hover {
+  box-shadow: 1px 1px 0 var(--sage);
+}
+.filters select:focus-visible,
+.buy select:focus-visible {
+  background-color: color-mix(in srgb, var(--sand) 28%, var(--ivory));
+}
+@media (prefers-reduced-motion: no-preference) {
+  .contact img {
+    transition:
+      filter 0.25s,
+      object-position 0.4s;
+  }
+  .contact a:hover img {
+    filter: brightness(1.06);
+    object-position: 50% 8%;
+  }
+  .filters select,
+  .buy select,
+  .ensemble-items a {
+    transition: background-color 0.18s;
+  }
+  .standard h1 {
+    animation: ink-in 0.28s ease-out both;
+  }
+}
+
+.ensemble-items a span { display: inline-flex; align-items: center; gap: .6rem; }
+.filter-toggle { display: none; }
+.filter-options { display: contents; }
+@media (max-width: 650px) {
+  .filters { align-items: center; }
+  .filters .filter-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    min-height: 44px;
+    padding-inline: 0;
+  }
+  .filter-options { display: none; }
+  .filter-options[data-open="true"] { display: flex; width: 100%; gap: .6rem; }
+  .filter-options label { flex: 1; min-width: 0; }
+  .filter-options select { width: 100%; }
+}

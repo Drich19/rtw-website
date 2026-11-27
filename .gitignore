@@ -1,0 +1,16 @@
+node_modules/
+.next/
+test-results/
+playwright-report/
+*.tsbuildinfo
+next-env.d.ts
+.env*
+/evidence/
+/private-campaign/
+/public/campaign/
+/assets/masters/
+/RTW-*Pack*/
+/*.zip
+/CODE_GUIDE.md
+/PLAN.md
+/AGENTS.md
